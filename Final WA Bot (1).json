@@ -1,0 +1,888 @@
+{
+  "name": "Final WA Bot",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {
+          "messageStatusUpdates": [
+            "all"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1296,
+        -432
+      ],
+      "id": "b96c6a80-665b-411f-905a-aeb371a93657",
+      "name": "chat recieved",
+      "webhookId": "b7580a3a-b8f3-42b8-9955-3bbd7efecf10",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "awlcN7ilquVxq2j2",
+          "name": "WhatsApp OAuth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $json.content.parts[0].text }}\nanswer to my question with 1 to 5 emojis and without any symbols and give me with keypoints of that question and if there is a medical question give me main symptom in that question\nand give with medicines answers for my questions.\nand also for general questions give simple answers for users question.\ngive this doctors names based on users questions \nAllergies and Asthma: An Allergist or Immunologist\nHeart Disease, High Blood Pressure, and Vascular Conditions: A Cardiologist\nSkin, Hair, and Nail conditions (e.g., acne, eczema, skin cancer): A Dermatologist\nDiabetes and Hormonal Disorders: An Endocrinologist\nStomach, Intestinal, and Digestive Issues: A Gastroenterologist\nBlood disorders (e.g., anemia, leukemia): A Hematologist\nInfections: An Infectious Disease Specialist\nKidney Disease: A Nephrologist\nBrain, Spinal Cord, and Nerve Disorders (e.g., epilepsy, Parkinson's disease): A Neurologist\nCancer: An Oncologist (for medical treatment like chemotherapy), a Surgical Oncologist (for surgery), or a Radiation Oncologist (for radiation therapy).\nEye and Vision Problems: An Ophthalmologist\nBone, Joint, and Muscle Problems: An Orthopedic Surgeon or a Rheumatologist\nChildhood Diseases: A Pediatrician\nMental Health Conditions (e.g., depression, anxiety): A Psychiatrist or a Psychologist\nLung and Respiratory Diseases (e.g., asthma, COPD): A Pulmonologist\nArthritis, Lupus, and other Inflammatory Joint Conditions: A Rheumatologist\nUrinary Tract and Male Reproductive System Issues: A Urologist\nWomen's Health, Pregnancy, and Childbirth: An Obstetrician or a Gynecologist\nSurgical Specialists\nGeneral Surgery: A General Surgeon\nBrain and Spinal Surgery: A Neurosurgeon\nHeart and Lung Surgery: A Cardiothoracic Surgeon\nAudiologist - This is a doctor who handles problems with hearing. These doctors also help hearing impaired children learn to communicate.\n\nAllergist - This is a doctor who helps with allergies. Any allergies you may have, such as, hay fever or asthma, will be checked out by this doctor.\n\nAndrologists - An andrologist is a specialist doctor that helps in diagnosing and treating male reproductive system disorders.\n\n\nAnesthesiologist - This is the doctor that helps you to sleep through painful operations and medical diagnoses. They are responsible for administering the anesthesia and are present during surgeries to help in complications arising from anesthesia medications.\n\nCardiologist - A cardiologist is certified to treat any problem dealing with heart diseases and cardiovascular diseases.\n\nCardiovascular Surgeon - This doctor carries out surgical and invasive techniques dealing with cardiovascular diseases.\n\nClinical Neurophysiologist - This is a doctor that diagnoses any problem dealing with the central, peripheral and autonomic nervous system with the aid of electrophysiological tests.\n\nDentist - Any dental problem from tooth decay to dentures to retainers are handled by a dentist. They also treat any gum diseases and oral defects.\n\nDermatologist - This is a doctor that treats any ailment related to the skin and its appendages such as hair, nails, etc.\n\nEmergency Doctors- When talking about types of doctors, these are doctors who handle trauma and emergency conditions in the Emergency room (ER) and are available at all times. Emergencies treated may vary from poisoning to broken bones, burns, heart attack concussions, accident trauma etc.\n\nEndocrinologist - Thyroid problems, hormone problems or any problems with the endocrine system is handled by an endocrinologist.\n\nEpidemiologists - This is a doctor who specializes in epidemic illnesses which are highly viral. They are more of scientists who identify new diseases, virus mutations and develop cures and modes of prevention of diseases with vaccinations, etc.\n\nENT Specialist - This doctor treats problems with the ear, nose and throat. An ENT surgeon would be a specialist who will be performing surgeries on these parts of the anatomy.\n\n\nFamily Practitioner - A family physician is the neighborhood doctor who is general physician treating illnesses and medical issues of all sorts, at all ages & medical non-emergency conditions. If the condition is serious, they will refer to a specialist relevant to the field of the illness.\n\nGastroenterologist - A doctor for illnesses related todigestive system including the common problem of gastritis and acid reflux.\n\nGynecologist - Any problems with the female reproductive system is referred to and treated by a gynecologist.\n\nGeneral Psychiatrist - Any person with mental illnesses such as schizophrenia, depression and anxiety problems is treated by the general psychiatrist.\n\nHematologist - Blood and its diseases are studied by a hematologist.\n\nHepatologists - This doctor is responsible for diagnosing and treating diseases of the liver.\n\nImmunologist - This is a doctor responsible for studying everything about the immune system and treats any diseases related.\n\nInfectious Disease Specialist - An IDS studies and treats diseases caused by viruses, bacteria, fungi, parasites and will identify outbreaks of epidemics and pandemic situations.\n\nInternal Medicine Specialists - These doctors are responsible for diagnosing any illnesses and managing them with nonsurgical treatment. These are usually unusual or serious diseases.\n\nInternists - These doctors focus on medicines related to adults and have special expertise in the areas related to the prevention and treatment of adult diseases.\n\nMedical Geneticist - A doctor who is responsible for testing, identifying and treating patients with genetic diseases and disorders.\n\nMicrobiologist - A microbiologist is a doctor who studies the causes, diagnosis and treatment of infectious diseases where microbes are involved.\n\n\nNeonatologist - A doctor for new-born babies, premature or critically ill babies.\n\nNephrologists - This is a specialist doctor that treats kidney diseases and renal problems with treatments such as dialysis.\n\nNeurologist - This doctor studies various brain disorders, such as Parkinson's disease and Alzheimer's disease.\n\nNeurosurgeons - These are the specialist doctors who carry out surgeries on central and peripheral nervous system diseases and the brain.\n\nObstetrician - This is a sub specialization in the gynecological field of study and handles various aspects of the female reproductive system, such as childbirth, caesareans etc.\n\nOncologist - An oncologist is a specialist physician that diagnoses and treats cancer patients with drugs, chemotherapy, radiation and when needed, surgical interventions.\n\nOphthalmologist - This is a doctor that treats eyes and various eye defects, blindness and performs different eye surgeries.\n\nOrthopedic Surgeon - If you suffer from arthritis and osteoporosis and other bone related illnesses, or broken bones, an orthopedic surgeon needs to be consulted.\n\nOrthopedist - Broken bones from falls or osteoporosis is treated by an orthopedist.\n\nPrimatologist - If someone is having a high risk of pregnancy, this is the doctor who should be consulted for special care and treatment.\n\nPale pathologist - A doctor that studies ancient diseases.\n\nParasitologist - A doctor that is responsible for study of parasites, their pathology and parasitic diseases and treatment of these diseases.\n\nPathologists - Specialist scientists who are doctors that study abnormalities in living organisms and study DNA, tissue, blood and other various human and animal cells. They are also responsible for performing autopsies on dead bodies to determine the cause of death.\n\n\nPediatrician - This is a doctor who treats children for any illness from birth to adolescent.\n\nPlastic Surgeon - If you are not happy with how you look, a plastic surgeon can change your appearance by performing cosmetic surgery on you.\n\nPhysiologists - A physiologist is a life science doctor who specializes in physiology and help rehabilitate.\n\nPhysiatrist - The doctor whose specialty is medicine and rehabilitation of the body and muscles.\n\nPlastic Surgeon - A plastic surgeon is a doctor that can transplant skin, muscles or change the structure of a face or other body parts for cosmetic and reconstructive purposes.\n\nPodiatrists - This is a specialist doctor who treats disorders of the foot and ankle.\n\nPsychiatrists - These doctors specialize in mental illnesses and will study, diagnoses and counsel and treat mental illnesses such as Bipolar, dementia, depression, Alzheimer's, etc.\n\nPulmonologist - A doctor who is responsible for diagnosing and treats lung conditions and treating or managing critical care patients admitted in the ICU with ventilator support.\n\nRadiologists - A doctor who specializes in use of X-rays or other imaging technologies in order to diagnose various illnesses.\n\nReproductive Endocrinologist - This doctor treats various reproductive problems that include sexual disorders and infertility problems etc.\n\nRheumatologist - A physician is responsible forhandling autoimmune disorders and allergic conditions.\n\nSurgeon - A surgeon is a doctor that specializes in surgical operations and will have their own specialties such as orthopedic, ENT, brain, nuro, cardiovascular, maxillo-facial surgery, plastic surgery, and transplant surgery.\n\nThoracic Oncologist - This doctor deals with cancer of the lungs, esophagus and chest.\n\nUrologist - Any urinary problems and urinary tract infections are treated by an urologist.\n\nVeterinarian - While other doctors are responsible for treating humans, the veterinarians are responsible for the treatment of sick animals.\n\nApart from these main types of doctors, there are other lesser known specialization areas for doctors. However, having a proper knowledge of these common types of physicians is a good starting point. \nYour goal: Help people understand their health problems in a clear, supportive way. \n\nAND ALSO SUGGEST THE KIND OF DOCTOR WHICH THEY SHOULD CONSIDER\n\nIF THEY GAVE ANY MEDICINE NAME THAT SHOULD GIVE A MAIN SYMPTOMS THAT A TABLET THEY KEPT\n\nu must ans in a way that is more simple to understand for rural areas people like if they say any diseases u must simply ask about the symptoms and make them ans yes or no and give ans in simple small structured way\n\nlanguage:speak in the lang user speaks\nuse some emojis at relavent places and also dont use and bold or any text other than plain text\nbased on user language give same language answer\n\n{{ $('chat recieved').item.json.messages[0].text.body }}",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -128,
+        -496
+      ],
+      "id": "d71a0fbb-3240-4005-a8d2-bb8871d8255e",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -176,
+        -208
+      ],
+      "id": "628de125-fa3d-4244-936d-c58aa62072b4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "CyHED3CBkKfoYrox",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('chat recieved').item.json.metadata.display_phone_number }}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -48,
+        -208
+      ],
+      "id": "ec002be0-9dba-49cb-9a3e-e68ffbd5ef45",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $json.messages[0].image.id }}"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -848,
+        -624
+      ],
+      "id": "e526946e-eb02-4e17-87c7-59c09e2cf4d7",
+      "name": "Download media",
+      "webhookId": "0810d8a1-83bd-4554-91af-82329dbb3f8b",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -624,
+        -624
+      ],
+      "id": "440391b9-f006-45f6-aea5-c4a036689300",
+      "name": "HTTP Request",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "Hey there! 👋 I need your help describing an image.\n\nHere's the mission: Tell me exactly what you see in the picture, no fluff! 🕵️‍♀️\n\nJust focus on **[the main subject, e.g., the medical condition, the object, the landscape]**. Leave out any background noise or extra details.\n\nLet's keep it concise and on-point! 🎯",
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        -624
+      ],
+      "id": "f00de918-dee2-43a6-baff-3888fcd2278b",
+      "name": "Analyze image",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "CyHED3CBkKfoYrox",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "=814600965063682",
+        "recipientPhoneNumber": "+91 8074945846",
+        "textBody": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        176,
+        -496
+      ],
+      "id": "87ec4ddd-b094-4a19-b1a0-94ec7e76a59c",
+      "name": "Send message",
+      "webhookId": "bf621a7c-83a6-4450-b66a-1253a6c8072f",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.messages[0].text }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    },
+                    "id": "cb5c066a-023d-44cf-b4e8-bb5ea71789b8"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "5bc67c95-5df2-4137-96a8-4842e6ab6a08",
+                    "leftValue": "={{ $json.messages[0].image }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "174d4b06-c223-441a-b433-405485654385",
+                    "leftValue": "={{ $json.messages[0].document }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e75c2e23-e07b-4d7e-8cae-a42f50868872",
+                    "leftValue": "={{ $json.messages[0].audio }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "dfb0043a-1982-4ea8-8cbc-05fa3c10114d",
+                    "leftValue": "={{ $json.messages[0].video }}",
+                    "rightValue": "",
+                    "operator": {
+                      "type": "object",
+                      "operation": "notEmpty",
+                      "singleValue": true
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -1072,
+        -480
+      ],
+      "id": "8b2195af-e335-4fd3-a718-0da1ab0401b0",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $json.messages[0].document.id }}"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -848,
+        -432
+      ],
+      "id": "ae8c75db-d75e-487a-909e-21c54dd2f7e3",
+      "name": "Download media1",
+      "webhookId": "566524a6-3608-41e1-a5e1-6290c439b2bc",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -624,
+        -432
+      ],
+      "id": "7e0ca60d-2a3a-409b-b70d-3d407c17a503",
+      "name": "HTTP Request1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "document",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-pro",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-pro"
+        },
+        "text": "Hey there! 👋 I need your help describing an document.",
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        -432
+      ],
+      "id": "5aaf5cfb-4773-47cd-893a-cabd4645e6b4",
+      "name": "Analyze document",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "CyHED3CBkKfoYrox",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $json.messages[0].audio.id }}"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -848,
+        -240
+      ],
+      "id": "2db9dadf-9288-415b-93f1-baeba4c0ebfa",
+      "name": "Download media2",
+      "webhookId": "02ea0ff8-9877-480e-b882-7d02f356ea24",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -624,
+        -240
+      ],
+      "id": "df81a7e4-2e9a-4d3f-981f-5256a0b4fd70",
+      "name": "HTTP Request2",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-pro",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-pro"
+        },
+        "text": "give the user is saying and reply what user is saying",
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        -240
+      ],
+      "id": "4fd4e2c0-dcc5-4728-93ee-e72dd6a6adf0",
+      "name": "Analyze audio",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "CyHED3CBkKfoYrox",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "video",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "models/gemini-2.5-flash",
+          "mode": "list",
+          "cachedResultName": "models/gemini-2.5-flash"
+        },
+        "text": "Hey there! 👋 I need your help describing an video.",
+        "inputType": "binary",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.googleGemini",
+      "typeVersion": 1,
+      "position": [
+        -400,
+        -48
+      ],
+      "id": "158bb6bd-4b6d-466e-ab76-d7dfd24d5d52",
+      "name": "Analyze video",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yV41HKMOAf4Mxspd",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $json.messages[0].video.id }}"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -848,
+        -48
+      ],
+      "id": "4f31024f-814f-4af8-b58b-b3e8cfa4bb87",
+      "name": "Download media3",
+      "webhookId": "02ea0ff8-9877-480e-b882-7d02f356ea24",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -624,
+        -48
+      ],
+      "id": "e93d7fe3-d2bb-480f-ac5f-930381f30253",
+      "name": "HTTP Request3",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=give me answer based on user question change this{ {{ $json.chatInput }} } into multiple languages.\ngive me with emojis and flags of their countries and bold letters and specific capital letters.\nhere indian seperate languages (telugu,hindi,malayalam,tamil,kannada,etc)for these give seperate answers \nremove the unwanted symbols like hashtags and stars.\n",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.2,
+      "position": [
+        -1040,
+        272
+      ],
+      "id": "17c73e75-b0a5-49c6-8870-0edbf16c9d6b",
+      "name": "AI Agent1"
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        -912,
+        560
+      ],
+      "id": "c8d1681e-4658-461e-8b52-15798237e789",
+      "name": "Simple Memory1"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "=814600965063682",
+        "recipientPhoneNumber": "+91 8074945846",
+        "textBody": "={{ $json.output }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -736,
+        272
+      ],
+      "id": "dfa522b6-1c10-4d4b-bb99-f5ed17303259",
+      "name": "Send message1",
+      "webhookId": "93ea0b60-7ed9-4c6f-802c-a1422536eec9",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "chb5OWImCcC6sG6C",
+          "name": "WhatsApp account 2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        -1200,
+        272
+      ],
+      "id": "d938401f-1b23-4e50-b6ab-4d6c6c8a382d",
+      "name": "When chat message received",
+      "webhookId": "3d69b0da-3790-4887-bec4-7f2c8d38e6ac"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        -1072,
+        560
+      ],
+      "id": "1921cf70-6290-43ed-95da-f65bcda9ff05",
+      "name": "Google Gemini Chat Model1",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "yV41HKMOAf4Mxspd",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "chat recieved": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download media": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "Analyze image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze image": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send message": {
+      "main": [
+        []
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download media",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download media1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download media2",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download media3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download media1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "Analyze document",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze document": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download media2": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request2": {
+      "main": [
+        [
+          {
+            "node": "Analyze audio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze audio": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download media3": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request3": {
+      "main": [
+        [
+          {
+            "node": "Analyze video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze video": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent1": {
+      "main": [
+        [
+          {
+            "node": "Send message1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory1": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model1": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent1",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "f9709eac-4e13-4d8c-a8d4-0e341e81fac4",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "08c2bd0c20b679b1639d91fdf0598a98a75bdb81fb191113374bb3bde6f9ab6f"
+  },
+  "id": "RL6vwzhV5GMXhfkj",
+  "tags": []
+}
